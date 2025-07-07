@@ -1,0 +1,68 @@
+<p>api-integration works!</p>
+
+<input type="number" #idToSearch placeholder="Enter ID">
+<input type="button" value="Find" (click)="findEmployeeById(idToSearch.value)">
+<br><br>
+
+<!-- Error Message -->
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+</div>
+
+<!-- Buttons -->
+<div class="mb-3 d-flex align-items-center">
+    <!-- Add Employee button -->
+    <button class="btn btn-primary me-3" routerLink="/add-employee">
+      Add Employee
+    </button>
+  
+    <!-- Input for ID to update -->
+    <input type="number" [(ngModel)]="idToUpdate"
+           placeholder="Enter ID to Update"
+           class="form-control w-auto me-3"
+           style="min-width: 150px; margin-top: 20px;">
+  
+    <!-- Update Employee button -->
+    <button class="btn btn-warning"
+            [routerLink]="['/update-employee', idToUpdate]"
+            [disabled]="!idToUpdate" style="margin-top: 10px;">
+      Update Employee
+    </button>
+
+    <!-- Input for ID to delete -->
+    <input type="number" [(ngModel)]="idToDelete"
+    placeholder="Enter ID to Delete"
+    class="form-control w-auto me-3"
+    style="min-width: 150px; margin-top: 20px;">
+
+    <!-- Delete Employee button -->
+    <button class="btn btn-danger"
+        (click)="deleteEmployee(idToDelete!)"
+        [disabled]="!idToDelete"
+        style="margin-top: 10px;">
+        Delete Employee
+    </button>
+
+</div>
+  
+<br><br>
+
+<!-- Table only if there are employees -->
+<table class="table table-hover" *ngIf="allEmps.length > 0">
+    <thead>
+        <tr style="background-color: lavender;">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of allEmps">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.department}}</td>
+        </tr>
+    </tbody>
+</table>

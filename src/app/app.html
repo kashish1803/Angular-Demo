@@ -1,0 +1,45 @@
+<!-- <div class="xyz">
+  <h1>Hi welcome to new angular demo</h1>
+  <app-home></app-home>
+  <app-login></app-login>
+  <app-signup></app-signup> ...
+  
+  <h1>
+    <a routerLink="home"> Home </a> ||
+    <a routerLink="gallery"> Gallery </a> ||
+    <a routerLink="contactus"> Contact Us </a> ||
+    <a routerLink="login"> Login </a> ||
+    <a routerLink="signup"> Signup </a> 
+  </h1>
+</div> -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Zomato</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="home">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="veg">Veg</a></li>
+          <li><a routerLink="nonveg">NonVeg</a></li>
+          <li><a routerLink="dessert">Desserts</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="databinding">Data Binding</a></li>
+      <li><a routerLink="dir">Directive</a></li>
+      <li><a routerLink="form">Forms</a></li>
+      <li><a routerLink="pipe">Pipe</a></li>
+      <li><a routerLink="api">Api Demo</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

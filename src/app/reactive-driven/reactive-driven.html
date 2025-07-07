@@ -1,0 +1,11 @@
+<p>reactive-driven works!</p>
+<form [formGroup]="student" (ngSubmit)="myInfo(student.value)">
+    <h3>
+        First Name : <input type="text" name="fname" formControlName="firstname"><br><br>
+        Last Name : <input type="text" name="lname" formControlName="lastname" ><br><br>
+        Age : <input type="number" name="age" formControlName="age" ><br><br>
+
+        <input type="submit" value="Register" [disabled]="student.invalid"> &nbsp;
+        <input type="reset" value="Reset">
+    </h3>
+</form>

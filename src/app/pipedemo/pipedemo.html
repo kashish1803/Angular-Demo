@@ -1,0 +1,31 @@
+<p>pipedemo works!</p>
+
+<h3>
+    {{5 | sqr }} <br>
+    {{10 | sqr }} <br>
+    {{5 | cube }} <br>
+    {{10 | cube }} <br><br>
+
+    {{name}} : <br>
+    {{name | uppercase}}<br>
+    {{name | lowercase}}<br>
+    {{name | titlecase}}<br><br>
+
+    {{amount}} : <br>
+    {{amount | currency}} <br>
+    {{amount | currency: 'INR'}} <br>
+    {{amount | currency: 'JPY'}} <br>
+    {{amount | currency: 'EUR'}} <br>
+    {{amount | currency: 'USD'}} <br><br>
+
+    
+    {{obj}} <br>
+    {{obj |json}} <br><br>
+
+    {{d}} <br>
+    {{d | date}} <br>
+    {{ d | date: 'MM-dd-yyyy' }} <br>
+    {{ d | date: 'dd-MM-yyyy' }} <br>
+    {{ d | date: 'dd-MM-yy' }} <br>
+    {{ d | date: 'dd-MM-yyyy HH:mm:ss' }} <br>
+</h3>

@@ -1,0 +1,30 @@
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* center all cards horizontally */
+        margin: 0 auto;
+        max-width: 1300px; /* optional: limit width */
+    }
+
+    .col-md-3 {
+        margin: 15px; /* spacing between cards vertically & horizontally */
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title span {
+        font-size: 16px;
+        float: right;
+    }

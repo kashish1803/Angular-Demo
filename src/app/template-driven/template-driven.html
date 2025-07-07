@@ -1,0 +1,29 @@
+<p>template-driven works!</p>
+<div>
+    <form #userForm="ngForm" (ngSubmit)="myInfo(userForm.value)">
+        <h2>
+            <div class="form-inline">
+                <label>
+                    User Name <span style="color: red;" *ngIf="username.invalid"> * </span> : 
+                    <input type="text" class="form-control"  name="username" required ngModel #username="ngModel">
+                    <h5 style="color: red;" *ngIf="username.invalid && username.touched">Please Fill the proper date </h5>
+                </label>
+            </div>
+
+
+             <div class="form-inline">
+                <label>
+                    User Pass <span style="color: red;" *ngIf="userpass.invalid"> * </span> : 
+                    <input type="text" class="form-control"  name="userpass" required ngModel #userpass="ngModel">
+  <h5 style="color: red;" *ngIf="userpass.invalid && userpass.touched">Please Fill the proper date </h5>
+                </label>
+            </div>
+
+              <div >
+                    <input type="submit" class="btn btn-success" [disabled]="userForm.invalid">
+                    
+                    <input type="reset" class="btn btn-danger">
+            </div>
+        </h2>
+    </form>
+</div>

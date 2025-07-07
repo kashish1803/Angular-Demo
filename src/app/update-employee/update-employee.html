@@ -1,0 +1,41 @@
+<h3>Update Employee</h3>
+
+<form #form="ngForm" (ngSubmit)="updateEmployee()" class="card p-4">
+  <!-- Name -->
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" name="name" class="form-control" required
+           [(ngModel)]="employee.name" #name="ngModel">
+    <div *ngIf="name.invalid && name.touched" class="text-danger">
+      Name is required.
+    </div>
+  </div>
+
+  <!-- Department -->
+  <div class="mb-3">
+    <label class="form-label">Department</label>
+    <input type="text" name="department" class="form-control" required
+           [(ngModel)]="employee.department" #department="ngModel">
+    <div *ngIf="department.invalid && department.touched" class="text-danger">
+      Department is required.
+    </div>
+  </div>
+
+  <!-- Salary -->
+  <div class="mb-3">
+    <label class="form-label">Salary</label>
+    <input type="number" name="salary" class="form-control" required min="0"
+           [(ngModel)]="employee.salary" #salary="ngModel">
+    <div *ngIf="salary.invalid && salary.touched" class="text-danger">
+      Valid salary is required.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid" style="margin-top: 10px;">
+    Update Employee
+  </button>
+</form>
+
+<div *ngIf="errorMessage" class="alert alert-danger mt-3">
+  {{ errorMessage }}
+</div>
